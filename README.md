@@ -1,2 +1,2 @@
 # FatturaElettronica
-Lettura Totale Fattura Elettronica
+Lettura di un file XML

@@ -16,7 +16,8 @@ void getNodeValue(){
     pugi::xml_node node=doc.first_child();
     cout << node.name()<<endl;
     pugi::xml_node node1=node.child("FatturaElettronicaBody").child("DatiPagamento").child("DettaglioPagamento").child("ImportoPagamento");
-    cout<<"VALORE: "<<node1.child_value()<<endl;
+    cout<<"NODE:ImportoPagamento" <<endl;
+    cout<<"VALUE: "<<node1.child_value()<<endl;
 }
 int main()
 {
@@ -29,5 +30,4 @@ int main()
     return 0;
 
 }
-
 

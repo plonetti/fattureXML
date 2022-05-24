@@ -9,10 +9,16 @@ void getRootName(){
     pugi::xml_node node = doc.first_child();
     cout<<"Root Name: "<<node.name()<<endl;
 }
+void getRootName1(){
+    pugi::xml_document doc;
+    pugi::xml_parse_result result = doc.load_file("Fattura1.xml");
 
+    pugi::xml_node node = doc.first_child();
+    cout<<"Root Name: "<<node.name()<<endl;
+}
 void getNodeValue(){
     pugi::xml_document doc;
-    doc.load_file("Fattura1.xml");
+    pugi::xml_parse_result result = doc.load_file("Fattura1.xml");
     pugi::xml_node node=doc.first_child();
     cout << node.name()<<endl;
     pugi::xml_node node1=node.child("FatturaElettronicaBody").child("DatiPagamento").child("DettaglioPagamento").child("ImportoPagamento");
@@ -21,13 +27,11 @@ void getNodeValue(){
 }
 int main()
 {
-   // stampaRadice();
-    //stampaFigli();
     getNodeValue();
     cout<<" \n*********FINE ELABORAZIONE***********************\n";
     cin.get();
     cin.get();
     return 0;
-
 }
+
 

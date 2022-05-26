@@ -3,13 +3,13 @@
 
 #include <filesystem>
 using std::filesystem::directory_iterator;
-
 using namespace std;
 
 
 void getRootName(){
     pugi::xml_document doc;
     doc.load_file("Fattura1.xml");
+
     pugi::xml_node node = doc.first_child();
     cout<<"Root Name: "<<node.name()<<endl;
 }
@@ -22,12 +22,12 @@ void getRootName1(){
 }
 void getNodeValue(){
     pugi::xml_document doc;
-    pugi::xml_parse_result result = doc.load_file("FATT/Fattura1.xml");
+    pugi::xml_parse_result result = doc.load_file("Fattura1.xml");
     pugi::xml_node node=doc.first_child();
     cout << node.name()<<endl;
     pugi::xml_node nodeChild=node.child("FatturaElettronicaBody").child("DatiPagamento").child("DettaglioPagamento").child("ImportoPagamento");
-    cout<<"NODE:ImportoPagamento" <<endl;
-    cout<<"VALUE: "<<nodeChild.child_value()<<endl;
+    //cout<<"NODE:ImportoPagamento" << nodeChild.name()<< endl;
+   cout<<"VALUE: "<<nodeChild.child_value()<<endl;
 }
 
 void listDir(){  
@@ -52,19 +52,25 @@ void getImportoAllFatt(){
         
         nodeValue=nodeChild.child_value();
         string fs(nodeValue);
-        totale += atof(fs.c_str());
+        //totale += atof(fs.c_str());
+        cout <<nodeChild.child_value()<<endl;
        
     }
-    cout<<"IMPORTO TOTALE DELLE FATTURE :" << totale<< endl;
-    //system("move \"FATT\\*" "FATT1"); 
+   //  cout<<"IMPORTO TOTALE DELLE FATTURE :" << totale;
+        
 }
+
+
 
 int main()
 {
-    getImportoAllFatt();
+   // getRootName();
+   getImportoAllFatt();
+    //system("move \"FATT\\*" "FATT1"); 
     cout<<" \n*********FINE ELABORAZIONE***********************\n";
     //cin.get();
     //cin.get();
     return 0;
 }
+
 

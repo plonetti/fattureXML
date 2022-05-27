@@ -1,2 +1,2 @@
 # FatturaElettronica
-Calcolo import ofatture elettroniche
+Calcolo importo fatture elettroniche

@@ -1,2 +1,2 @@
 # FatturaElettronica
-Lettura di un file XML
+Calcolo import ofatture elettroniche

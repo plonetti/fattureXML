@@ -66,7 +66,7 @@ const std::string currentDateTime() {
     return buf;
 }
 
-// ******** Funzione rinomina file elaborati *******//
+// ******** Funzione rinomina fatture elaborate presenti nella cartella FATT *******//
 void renameAllFile(){
     string path = "FATT";
     string s = currentDateTime();
@@ -75,7 +75,7 @@ void renameAllFile(){
     }
 }
 
-// ******** Funzione sposta file elaborati ******//
+// ******** Funzione sposta fatture elaborate presenti nella cartella FATT nella cartella FATT1  ******//
 void moveAllFileXML(){
     system("move \"fatt\\*\" \"fatt1\" ");
 }
@@ -93,6 +93,7 @@ int menu(void){
     while (selezione< 1 || selezione>3);
   return selezione;
 }
+//Programma principale
 int main()
 {
     int scelta;
